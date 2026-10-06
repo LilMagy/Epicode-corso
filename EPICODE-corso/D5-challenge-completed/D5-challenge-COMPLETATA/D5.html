@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Youtube - Web Prep</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+      body {
+        display: flex;
+        margin: 0;
+        height: 100vh;
+        font-family: 'Roboto', sans-serif;
+      }
+
+      .main {
+        width: 100%;
+      }
+
+      .topbar {
+        height: 8vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .content {
+        height: 100%;
+      }
+
+      .icon {
+        height: 8vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 2em;
+        cursor: pointer;
+      }
+
+      .icon ion-icon {
+        font-size: 2em;
+      }
+
+      .icon p {
+        margin: 0;
+      }
+
+      .icon:not(:first-of-type) {
+        height: 16vh;
+      }
+
+      .logo {
+        height: 50%;
+      }
+
+      .search-wrapper {
+        display: flex;
+        height: 50%;
+        width: 30%;
+      }
+
+      .search-wrapper input {
+        width: 100%;
+        padding: 0 1em;
+      }
+
+      .icons-wrapper {
+        display: flex;
+        align-items: center;
+      }
+
+      .top-icon {
+        font-size: 2em;
+        padding: 0 0.5em;
+      }
+
+      .mic-icon {
+        display: flex;
+        align-items: center;
+      }
+
+      .search-btn {
+        padding: 0 0.7em;
+        font-size: 1.3em;
+        display: flex;
+        align-items: center;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      .sidebar {
+        width: 90px;
+        flex-shrink: 0;
+        padding-top: 0;
+      }
+
+      .content {
+        height: calc(100vh - 8vh);
+        overflow-y: auto;
+        background: #f9f9f9;
+        padding: 24px;
+      }
+
+      .video-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 28px 18px;
+      }
+
+      .video-card {
+        min-width: 0;
+        cursor: pointer;
+      }
+
+      .thumbnail-wrapper {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+        background: #ddd;
+      }
+
+      .thumbnail {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        transition: transform 0.2s ease;
+      }
+
+      .video-card:hover .thumbnail {
+        transform: scale(1.02);
+      }
+
+      .video-info {
+        display: flex;
+        gap: 12px;
+        padding-top: 12px;
+      }
+
+      .channel-logo {
+        width: 36px;
+        height: 36px;
+        flex: 0 0 36px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      .video-text {
+        min-width: 0;
+      }
+
+      .video-title {
+        margin: 0 0 6px;
+        font-size: 15px;
+        line-height: 1.35;
+        font-weight: 700;
+      }
+
+      .channel-name,
+      .video-meta {
+        margin: 0;
+        color: #606060;
+        font-size: 13px;
+        line-height: 1.4;
+      }
+
+      @media (max-width: 1100px) {
+        .video-grid {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 800px) {
+        .sidebar {
+          width: 70px;
+        }
+
+        .icon {
+          padding: 0 1em;
+        }
+
+        .search-wrapper {
+          width: 45%;
+        }
+
+        .video-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .content {
+          padding: 18px;
+        }
+      }
+
+      @media (max-width: 550px) {
+        .sidebar {
+          display: none;
+        }
+
+        .topbar {
+          padding: 0 12px;
+        }
+
+        .logo {
+          height: 40%;
+        }
+
+        .search-wrapper {
+          width: 45%;
+        }
+
+        .top-icon {
+          font-size: 1.5em;
+          padding: 0 0.25em;
+        }
+
+        .video-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .content {
+          padding: 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="icon">
+        <ion-icon name="menu-sharp"></ion-icon>
+      </div>
+      <div class="icon">
+        <ion-icon name="home-outline"></ion-icon>
+        <p>Home</p>
+      </div>
+      <div class="icon">
+        <ion-icon name="compass-outline"></ion-icon>
+        <p>Explore</p>
+      </div>
+      <div class="icon">
+        <ion-icon name="albums-outline"></ion-icon>
+        <p>Library</p>
+      </div>
+    </div>
+    <div class="main">
+      <div class="topbar">
+        <img class="logo" src="assets/yt-logo.svg" alt="yt-logo" />
+        <div class="search-wrapper">
+          <input type="text" placeholder="Search on YouTube" />
+          <button class="search-btn">
+            <ion-icon name="search"></ion-icon>
+          </button>
+          <div class="top-icon mic-icon">
+            <ion-icon name="mic-sharp"></ion-icon>
+          </div>
+        </div>
+        <div class="icons-wrapper">
+          <div class="top-icon">
+            <ion-icon name="videocam-outline"></ion-icon>
+          </div>
+          <div class="top-icon">
+            <ion-icon name="notifications-outline"></ion-icon>
+          </div>
+          <div class="top-icon">
+            <ion-icon name="person-circle-outline"></ion-icon>
+          </div>
+        </div>
+      </div>
+      <div class="content">
+        <div class="video-grid">
+          <article class="video-card">
+            <div class="thumbnail-wrapper">
+              <img class="thumbnail" src="assets/epicode_thumb.png" alt="Anteprima video Epicode" />
+            </div>
+            <div class="video-info">
+              <img class="channel-logo" src="assets/epicode-logo.png" alt="Epicode" />
+              <div class="video-text">
+                <h2 class="video-title">Impara a programmare con Epicode</h2>
+                <p class="channel-name">Epicode</p>
+                <p class="video-meta">12.4K visualizzazioni · 2 settimane fa</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="video-card">
+            <div class="thumbnail-wrapper">
+              <img class="thumbnail" src="assets/epicode_thumb.png" alt="Anteprima video Epicode" />
+            </div>
+            <div class="video-info">
+              <img class="channel-logo" src="assets/epicode-logo.png" alt="Epicode" />
+              <div class="video-text">
+                <h2 class="video-title">HTML e CSS: crea la tua prima pagina web</h2>
+                <p class="channel-name">Epicode</p>
+                <p class="video-meta">8.7K visualizzazioni · 1 settimana fa</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="video-card">
+            <div class="thumbnail-wrapper">
+              <img class="thumbnail" src="assets/epicode_thumb.png" alt="Anteprima video Epicode" />
+            </div>
+            <div class="video-info">
+              <img class="channel-logo" src="assets/epicode-logo.png" alt="Epicode" />
+              <div class="video-text">
+                <h2 class="video-title">CSS moderno: trucchi e tecniche utili</h2>
+                <p class="channel-name">Epicode</p>
+                <p class="video-meta">5.2K visualizzazioni · 5 giorni fa</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="video-card">
+            <div class="thumbnail-wrapper">
+              <img class="thumbnail" src="assets/epicode_thumb.png" alt="Anteprima video Epicode" />
+            </div>
+            <div class="video-info">
+              <img class="channel-logo" src="assets/epicode-logo.png" alt="Epicode" />
+              <div class="video-text">
+                <h2 class="video-title">Diventa Web Developer: da dove iniziare</h2>
+                <p class="channel-name">Epicode</p>
+                <p class="video-meta">18K visualizzazioni · 1 mese fa</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="video-card">
+            <div class="thumbnail-wrapper">
+              <img class="thumbnail" src="assets/epicode_thumb.png" alt="Anteprima video Epicode" />
+            </div>
+            <div class="video-info">
+              <img class="channel-logo" src="assets/epicode-logo.png" alt="Epicode" />
+              <div class="video-text">
+                <h2 class="video-title">JavaScript: le basi che devi conoscere</h2>
+                <p class="channel-name">Epicode</p>
+                <p class="video-meta">9.1K visualizzazioni · 3 giorni fa</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="video-card">
+            <div class="thumbnail-wrapper">
+              <img class="thumbnail" src="assets/epicode_thumb.png" alt="Anteprima video Epicode" />
+            </div>
+            <div class="video-info">
+              <img class="channel-logo" src="assets/epicode-logo.png" alt="Epicode" />
+              <div class="video-text">
+                <h2 class="video-title">Come funziona il responsive design</h2>
+                <p class="channel-name">Epicode</p>
+                <p class="video-meta">6.3K visualizzazioni · 4 giorni fa</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="video-card">
+            <div class="thumbnail-wrapper">
+              <img class="thumbnail" src="assets/epicode_thumb.png" alt="Anteprima video Epicode" />
+            </div>
+            <div class="video-info">
+              <img class="channel-logo" src="assets/epicode-logo.png" alt="Epicode" />
+              <div class="video-text">
+                <h2 class="video-title">Flexbox spiegato in modo semplice</h2>
+                <p class="channel-name">Epicode</p>
+                <p class="video-meta">14K visualizzazioni · 2 mesi fa</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="video-card">
+            <div class="thumbnail-wrapper">
+              <img class="thumbnail" src="assets/epicode_thumb.png" alt="Anteprima video Epicode" />
+            </div>
+            <div class="video-info">
+              <img class="channel-logo" src="assets/epicode-logo.png" alt="Epicode" />
+              <div class="video-text">
+                <h2 class="video-title">I consigli per il tuo primo progetto</h2>
+                <p class="channel-name">Epicode</p>
+                <p class="video-meta">11K visualizzazioni · 3 settimane fa</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>

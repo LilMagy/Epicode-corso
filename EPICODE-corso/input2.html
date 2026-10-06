@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrazione</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="date"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .checkbox-group,
+        .radio-group {
+            margin-top: 10px;
+        }
+
+        .checkbox-group label,
+        .radio-group label {
+            display: inline-block;
+            font-weight: normal;
+            margin: 5px 15px 5px 0;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            margin-top: 25px;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Registrazione</h1>
+
+        <form id="registrationForm">
+
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="cognome">Cognome:</label>
+            <input type="text" id="cognome" name="cognome" required>
+
+            <label for="email">Indirizzo email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="data">Data di nascita:</label>
+            <input type="date" id="data" name="data" required>
+
+            <label for="telefono">Numero di telefono:</label>
+            <input type="number" id="telefono" name="telefono" required>
+
+            <label>Gusti musicali:</label>
+
+            <div class="checkbox-group">
+                <label>
+                    <input type="checkbox" name="musica" value="rock">
+                    Rock
+                </label>
+
+                <label>
+                    <input type="checkbox" name="musica" value="pop">
+                    Pop
+                </label>
+
+                <label>
+                    <input type="checkbox" name="musica" value="rap">
+                    Rap
+                </label>
+
+                <label>
+                    <input type="checkbox" name="musica" value="jazz">
+                    Jazz
+                </label>
+
+                <label>
+                    <input type="checkbox" name="musica" value="classica">
+                    Classica
+                </label>
+            </div>
+
+            <label>Accettazione termini e condizioni:</label>
+
+            <div class="radio-group">
+                <label>
+                    <input type="radio" name="termini" value="accetto" required>
+                    Accetto i termini e le condizioni
+                </label>
+
+                <label>
+                    <input type="radio" name="termini" value="non_accetto">
+                    Non accetto
+                </label>
+            </div>
+
+            <input type="submit" value="Invia registrazione">
+
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("registrationForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            alert("Registrazione inviata!");
+        });
+    </script>
+
+</body>
+</html>
