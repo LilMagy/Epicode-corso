@@ -9,11 +9,18 @@
 </head>
 
 <body>
-    <h1>Mario Rossi</h1>
 
+
+    <div class="container">
+        
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeEtO9l_hVIAZqLh735IADyRIO2lDOmTQExwf7oSdTww&s=10"
+            alt="Snow" style="width:50%;">
+
+    </div>
     <header>
-        <nav>
-            <p> <strong>Studente Full-stack</strong> - Epicode 2026 </p>
+        <nav class="centered">
+            <h1>Mario Rossi</h1>
+            <p class="sottotitolo"> <i><strong>Studente Full-stack</strong> - Epicode 2026</i> </p>
             <ul>
                 <li> <a href="#chi-sono">Chi sono </a> </li>
                 <li> <a href="#competenze">Competenze </a> </li>
@@ -52,7 +59,7 @@
         <p>Le tecnologie che vedo durante le prime settimane del corso</p>
 
         <ul>
-            <li>HTML - struttura delle pagine </li>
+            <li><b>HTML</b> - struttura delle pagine </li>
             <li>CSS - stile e impaginazione </li>
             <li>Git e Github - versionamento del codice</li>
             <li>VSS - editor di lavoro</li>
@@ -95,10 +102,11 @@
             </p>
             <table id="t1">
                 <thead>
-                    <th> Anno </th>
-                    <th> Ruolo </th>
-                    <th> Sede </th>
-
+                    <tr>
+                        <th> Anno </th>
+                        <th> Ruolo </th>
+                        <th> Sede </th>
+                    </tr>
                 </thead>
                 <tbody>
                     <tr>
@@ -127,34 +135,35 @@
         <div>
             <h2 id="contattami">Contattami</h2>
             <p> Compila il form per scrivermi, rispondo in 24h</p>
-      <fieldset>
-          <legend>FIELDSET</legend>
-            <form action="#" method="post">
-                <label for="name">Nome:</label>
-                <input type="text" id="name" name="name" placeholder="Nome&Cognome" required><br><br>
-                <label for="date">Data:</label>
-                <input type="date" id="date" name="date" required><br><br>
-                <label for="email">Email:</label><br><br>
-                <input type="email" id="email" name="email" placeholder="latua@gmail.com" required><br><br>
-                <label for="y_select">Selezionare motivo del contatto</label><br><br>
-                <select name="y-select" id="y-select">
-                    <option value="">Proposta di lavoro</option>
-                    <option value="">Brutte notizie</option>
-                    <option value="">Riscossione debiti</option>
-                    <option value="">Sesso occasionale</option>
-                </select><br><br>
+            <fieldset>
+                <legend>FIELDSET</legend>
+                <form action="#" method="post">
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" name="name" placeholder="Nome&Cognome" required><br><br>
+                    <label for="date">Data:</label>
+                    <input type="date" id="date" name="date" required><br><br>
+                    <label for="email">Email:</label><br><br>
+                    <input type="email" id="email" name="email" placeholder="latua@gmail.com" required><br><br>
+                    <label for="y_select">Selezionare motivo del contatto</label><br><br>
+                    <select name="y-select" id="y-select">
+                        <option value="">Proposta di lavoro</option>
+                        <option value="">Brutte notizie</option>
+                        <option value="">Riscossione debiti</option>
+                        <option value="">Sesso occasionale</option>
+                    </select><br><br>
 
-                <label for="date2">Data preferita:</label>
-                <input type="date" id="date2" name="date2"><br><br>
-                <label for="messaggio">Messaggio</label><br><br>
-                <textarea name="messaggio" id="messaggio" rows="5" placeholder="Scrivere qui il proprio messaggio"
-                    required></textarea> <br><br>
 
-                <label for="cbox">Accetto di essere ricontattato</label>
-                <input type="checkbox" name="cbox" id="cbox">
-                <input type="submit" value="Submit">
-            </form>
-        </fieldset>
+                    <label for="date2">Data preferita:</label>
+                    <input type="date" id="date2" name="date2"><br><br>
+                    <label for="messaggio">Messaggio</label><br><br>
+                    <textarea name="messaggio" id="messaggio" rows="5" placeholder="Scrivere qui il proprio messaggio"
+                        required></textarea> <br><br>
+
+                    <label for="cbox">Accetto di essere ricontattato</label>
+                    <input type="checkbox" name="cbox" id="cbox">
+                    <input type="submit" value="Submit" id="submit">
+                </form>
+            </fieldset>
 
         </div>
     </section>
