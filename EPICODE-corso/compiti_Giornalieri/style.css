@@ -1,0 +1,68 @@
+h2{
+    color: #008491;
+}
+
+.sottotitolo{
+    color: orangered;
+    text-decoration-color:red ;
+}
+
+#t1 {
+    border: 1px solid #000;
+}
+
+#t1 tr {
+    text-align: center;
+}
+
+a {
+    color: orangered;
+}
+
+a:hover {
+    color: orange;
+}
+
+
+.container {
+    position: relative;
+    text-align: center;
+    color: rgb(6, 6, 6);
+}
+
+
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#submit{
+background-color: navy;
+color: rgb(228, 225, 219);
+}
+
+#submit:hover{
+background-color: red;
+}
+
+fieldset{
+    color: navy;
+}
+
+input:focus{
+    background-color: lightsteelblue;
+}
+
+#messaggio:focus{
+    background-color: lightgreen;
+}
+
+
+footer{
+    background-color: navy;
+    color: aliceblue;
+    margin-right: 80%;
+}
