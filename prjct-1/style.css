@@ -1,0 +1,299 @@
+/* 
+section h2:nth-of-type(even){
+    color: #008c9e; 
+}
+/* LOGICA ERRATA= per ogni sezione seleziona gli h2 pari interni alla sezione:nessuno perché ogni sezione ha 1 h2w  */
+/* 
+section h2:nth-of-type(odd){ 
+    color: #ffb347;
+}
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Ultra&display=swap");
+
+.ultra-regular {
+  font-family: "Ultra", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* border box fa in modo che anche margin e padding siano considerati nella height e width: cosi non si rischia di impostare le dimensioni di un oggetto per poi trovarselo più grande perché heightActual= padding + margin + height; se invece ad una border box di paddin 10 imposto height=20 allora heightActual = (height-padding) + padding = 20 */
+}
+
+main section h2 {
+  font-family: "Astigmatic";
+  font-size: 2em;
+}
+
+.Avatar {
+  border-radius: 50%;
+  border: 4px solid #ff7a00;
+  float: left;
+  margin: 0 24px 12px 0;
+  width: 180px;
+  height: 180px;
+}
+
+#competenze {
+  clear: both;
+}
+
+#chi-sono p {
+  line-height: normal;
+}
+
+#chi-sono p:first-of-type::first-letter {
+  font-size: 3rem;
+  font-weight: bold;
+  float: left;
+  margin-right: 6px;
+  color: #ff7a00;
+}
+
+
+
+.project{
+  border: 1px solid black;
+  border-left: 5px solid #ff7a00;; 
+  background-color: whitesmoke;
+  border-radius: 8px;
+  padding: 2px;
+  margin-bottom: 10px;
+}
+
+
+
+.project:first-of-type h3::after {
+  /*FIRST-OF-TYPE seleziona il primo tipo di tag corrisponte alla classe: in questo caso il primo div con classe*/
+  content: "NEW";
+  display: inline-block;
+  padding: 2px 8px;
+  margin-left: 12px;
+  background-color: #ff7a00;
+  border-radius: 3px;
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+html body {
+  margin: 0;
+  padding: 0;
+  background-color: #001f3f;
+}
+
+main {
+  max-width: 920px;
+  margin: 0px auto;
+  padding: 40px 20px;
+  font-family: "Roboto";
+}
+
+main section {
+  padding: 32px;
+  margin-bottom: 24px;
+  border: 2px solid black;
+  border-radius: 12px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+body section:nth-of-type(even) {
+  h2 {
+    color: #001f3f;
+    /* LOGICA= seleziona le sezioni pari all'interno di body e là dentro esegui h2{color:blu}  */
+  }
+
+  h2::before {
+    content: "- ";
+    font-size: 1.5em;
+    color: #001f3f;
+  }
+}
+
+body section:nth-of-type(odd) {
+  h2 {
+    color: #ff7a00;
+  }
+  h2::before {
+    content: "- ";
+    font-size: 1.5em;
+    color: #ff7a00;
+  }
+}
+
+body section:nth-of-type(even):hover{
+  border-color: #008c9e;
+}
+
+body section:nth-of-type(odd):hover{
+  border-color: #ffb347;
+}
+
+
+
+#site-header nav h1 {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+#site-header {
+  padding: 24px 20px 0;
+  text-align: center;
+}
+
+#site-header nav {
+  margin: 0 auto; 
+  padding: 8px 16px;
+  border-radius: 4px;
+  border-bottom: 4px solid #ffb347;
+  background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20240709/pngtree-stars-in-dark-blue-night-sky-image_15868659.jpg"); 
+}
+
+.sottotitolo {
+  color: #ff7a00;
+  text-decoration-color: red;
+}
+
+caption{
+  text-align: left;
+  font-style: oblique;
+  color: #001f3f;
+}
+
+
+#t1 {
+  width: 100%;
+ border-collapse: collapse;
+}
+
+#t1 tbody td{
+  padding: 3px 0;
+  
+}
+
+#t1 tbody tr{
+  width: 100%;
+  border: 1px solid #000;
+  
+}
+
+#t1 th{
+  width: 32%;
+  border: none;
+  text-align: left;
+  background-color: #ff7a00;
+  padding: 2px 0px;
+}
+
+
+#t2 {
+  width: 100%;
+  border: 1px solid #000;
+}
+
+#t2 tbody td p {
+  margin: 2px;
+  font-family: 'Times New Roman', Times, serif;
+
+}
+
+#t2 td, th{
+  width: 50%;
+  text-align: center;
+  border: 1px solid black;
+
+}
+
+#t2 tbody td {
+  text-align: center;
+  border: 1px solid black;
+
+}
+
+
+.barra {
+  width: 100%;
+  height: 14px;
+  background-color: #ddd;
+  border-radius: 7px;
+  
+}
+
+.barra span {
+  display: block;
+  height: 100%;
+  background-color: #008c9e;
+  border-radius: 7px;
+}
+
+
+
+
+a {
+  color: #ff7a00;
+}
+
+a:hover {
+  color: #ffb347;
+}
+
+#submit {
+  background-color: #ffb347;
+  color: rgb(228, 225, 219);
+}
+
+#submit:hover {
+  background-color: red;
+}
+
+fieldset {
+  color: navy;
+}
+
+input:focus {
+  background-color: lightsteelblue;
+}
+
+input[type="checkbox"] {
+  width: auto;
+}
+
+#messaggio:focus {
+  background-color: lightgreen;
+}
+
+section:nth-of-type(odd) {
+  background-color: #008c9e;
+}
+
+section:nth-of-type(even) {
+  background-color: #ffb347;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #999999;
+  font-style: italic;
+}
+
+button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+}
+
+footer {
+  height: 30px;
+  background-color: #ff7a00;
+  color: aliceblue;
+  font-family: "Astigmatic";
+  text-shadow: 1px 2px 4px #001f3f;
+  text-align: center;
+  line-height: 1.7;
+}
+footer a {
+  color: #001f3f;
+}
