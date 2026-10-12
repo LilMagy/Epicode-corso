@@ -81,9 +81,8 @@ console.log(`5 anni fa ne avevi ${youngAge}`);
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-
-function maggiorenne(age) {
 let bigBoy
+function maggiorenne(age) {
   if (age >= 18) {
     console.log(`Età: ${age} anni - Maggiorenne: true `); return bigBoy = true;
   } else {
