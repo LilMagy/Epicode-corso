@@ -168,12 +168,6 @@ console.log(perColoreOcchi);
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
-/* ESERCIZIO 4 — Raggruppa per colore degli occhi
-   For su starWarsCharacters + switch (character.eye_color).
-   In ogni case fai push del personaggio nell'array giusto. Ricorda break.
-   Stampa perColoreOcchi.
-*/
-
 for (let i = 0; i < starWarsCharacters.length; i++) {
   let c = starWarsCharacters[i];
 
@@ -223,15 +217,6 @@ console.log(massaTot);
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-
-/* ESERCIZIO 6 — Classifica il carico
-   Su massaTot, switch (true) o if/else if:
-   < 500            → "Carico leggero"
-   500 – 700        → "Carico medio"
-   700 – 900        → "Attenzione: oltre 700"
-   900 – 1000       → "Carico critico"
-   > 1000           → "PERICOLO: sovraccarico"
-*/
 
 let messaggio;
 
