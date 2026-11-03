@@ -1,0 +1,451 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background:  url("/assets/img/bg.jpg") center / cover no-repeat fixed;
+  color: #1b2845;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
+  box-shadow: 10px 10px 24px rgba(0, 0, 0, 0.5);
+}
+
+/*Header*/
+
+.brand {
+  width: 100%;
+  max-width: 720px;
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.brand-logo {
+  height: 36px;
+}
+
+/*Card*/
+
+#app {
+  background: whitesmoke;
+  border-radius: 16px;
+  padding: 40px;
+  max-width: 720px;
+  width: 100%;
+  min-height: 350px; /*dimensione della card minima da mostrare*/
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+}
+
+/*bottoni*/
+
+.restartQ,
+.restart,
+.displayQ,
+.skip {
+  border: 2px solid #3B1455;
+  border-radius: 12px;
+  color: #3B1455;
+  background-color: whitesmoke;
+  padding: 7px 15px;
+  font-weight: bold;
+  width: 180px;
+  margin: 10px;
+}
+
+/*Effetto grafico sui bottoni quando ci passi sopra*/
+
+.start:hover,
+.restart:hover,
+.restartQ:hover,
+.skip:hover,
+.optionButton:hover,
+.displayQ:hover {
+  background-color: rgba(235, 209, 238, 0.8);
+  cursor: pointer;
+}
+
+/* Welcome Render */
+
+#app .welcome {
+  margin-top: 15px;
+}
+
+#app .welcome p {
+  font-size: 18px;
+  line-height: 24px;
+  text-align: justify;
+}
+
+.welcome .title {
+  text-align: center;
+  padding: 5px 5px 20px 5px;
+  font-size: x-large;
+}
+
+.welcome .intro {
+  padding: 5px;
+  text-align: justify;
+}
+
+.welcome .intro span {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.start {
+  border: 2px solid #3B1455;
+  border-radius: 12px;
+  color: #3B1455;
+  background-color: whitesmoke;
+  padding: 7px 15px;
+  font-weight: bold;
+  width: 180px;
+
+/* Proprietà per centrare il bottone */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+
+/* Quiz Render */
+
+/*Div contenitore di #counter "contatore di domande"*/
+.counters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+#counter {
+  color: #3B1455;
+  font-size: small;
+  float: left;
+  margin-top: 6px;
+}
+
+/*Div del timer*/
+
+#timer {
+  color: #3B1455;
+  float: right;
+  border: 2px solid #3B1455;
+  width: 50px;
+  height: 30px;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 10px;
+}
+
+.warning {
+  background-color: #e63946;
+}
+
+.warning p {
+  color: whitesmoke;
+}
+
+/*Domanda del quiz*/
+
+.question {
+  font-weight: bold;
+  margin-top: 55px;
+  margin-bottom: 20px;
+}
+
+/*Div .questionnaire contenente le risposte .answer , i bottoni .skip .restartQ e il divDot (pallini progressivi) */
+
+.answer {
+  list-style: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li .optionButton {
+  border: 2px solid #3B1455;
+  border-radius: 12px;
+  color: #1b2845;
+  background-color: whitesmoke;
+  padding: 7px;
+  width: 100%;
+  font-weight: 500;
+  margin-bottom: 5px;
+  font-size: medium;
+}
+
+li .optionButton:hover {
+  background-color: rgba(235, 209, 238, 0.8);
+  color: #1b2845;
+}
+
+li .correct {
+  background-color: #2d6a4f;
+  color: whitesmoke;
+}
+
+li .correct:hover {
+  background-color: #2d6a4f;
+  color: whitesmoke;
+}
+
+li .wrong {
+  background-color: #e63946;
+  color: white;
+}
+
+li .wrong:hover {
+  background-color: #e63946;
+  color: white;
+}
+
+.restartQ {
+  float: right;
+}
+
+.button.Q {
+  margin-top: 50px;
+}
+
+/*Pallini progressivi*/
+
+.divDot {
+  width: 60%;
+  display: block;
+  margin: 10px auto;
+  text-align: center;
+}
+
+.dot { /*pallino*/
+  height: 15px;
+  width: 15px;
+  background-color: whitesmoke;
+  border: 1px solid rgb(117, 117, 117);
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
+  margin: 5px;
+}
+
+.purple {
+  background-color: #702975;
+}
+
+.void {
+  background-color: whitesmoke;
+}
+
+/* Result Render */
+
+.resultsTitle {
+  text-align: center;
+  font-size: x-large;
+  margin-bottom: 10px;
+  padding: 7px;
+}
+
+.results {
+  width: 100%;
+  text-align: center;
+}
+
+.results p {
+  text-align: center;
+  padding: 7px;
+}
+
+/*Div che contiene la scritta Promosso/Bocciato*/
+
+#isPassedContainer { /*Div*/
+  margin-top: 20px;
+  display: inline-block;
+}
+
+.passed {
+  background-color: #4caf50;
+  color: whitesmoke;
+  margin-top: 3px;
+}
+
+.failed {
+  background-color: #f44336;
+  color: whitesmoke;
+  margin-top: 3px;
+}
+
+.passed,
+.failed {
+  width: 60%;
+  border: 2px solid white;
+  border-radius: 48px;
+  display: block;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  padding-bottom: 8px;
+  text-align: center;
+}
+
+.passed p::after {
+  content: "☺";
+  display: inline-block;
+  font-size: 25px;
+}
+
+.failed p::after {
+  content: "☹";
+  display: inline-block;
+}
+
+/*Grafico a ciambella con tre colori*/
+
+.graph {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: conic-gradient(); /*I colori e le percentuali sono date a riga 501-505 di JavaScript*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  position: relative; /* Fondamentale per posizionare gli elementi interni */
+  margin-top: 15px; 
+}
+
+/* Il buco della ciambella */
+
+.graph::before {
+  content: ""; /*Aggiungiamo uno spazietto prima del div. Dato che il div è un cerchio si posiziona al suo centro. */
+  position: absolute; /* Lo stacca dal flusso flex, mettendolo al centro esatto */
+  width: 100px; /*La differenza tra le dimensioni del grafico e del buco definisce la dimensione del grafrico a schermo. In questo caso è 50px*/
+  height: 100px;
+  background-color: whitesmoke; /* Colore di sfondo del buco */
+  border-radius: 50%;
+  z-index: 1; /* Lo posiziona sopra al gradiente ma sotto al testo */
+}
+
+/* La percentuale */
+
+.graph>span {
+  position: relative; /* Lo porta sopra al buco */
+  z-index: 2; /* Deve essere più alto del buco per essere visibile */
+  font-size: xx-large;
+  font-weight: bold;
+  text-align: center;
+}
+
+/*Easter egg - spunta un risultato simpatico quando l'utente non risponde a nessuna domanda*/
+
+.graph>.easterEgg {
+  background: url("/assets/img/gatto1.jpg"); /*foto gattino*/
+  width: 150px; /*Stessa dimensione del grafico così da coprirlo*/
+  height: 150px;
+  position: absolute;
+  border-radius: 50%;
+  z-index: 3;
+}
+
+.easterEggP {
+  z-index: 3;
+  margin-top: 10px;
+  width: 100%;
+}
+
+/* Centra la lista e rimuove i pallini di default */
+
+.legend { /*ul*/
+  text-align: center;
+  list-style: none;
+  padding: 0;
+  margin-top: 30px;
+}
+
+.legend li {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.legend li div { /*I pallini sono div*/
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 6px;
+  vertical-align: middle; /* Allinea verticalmente il pallino rispetto al testo */
+}
+
+.legend li p { /*Scritti vicino ai div*/
+  display: inline-block;
+  margin: 0;
+  vertical-align: middle;
+}
+
+/*Colori di pallini*/
+
+.colorRed {
+  height: 10px;
+  width: 10px;
+  background-color: #f44336;
+  border: 1px solid rgb(117, 117, 117);
+  border-radius: 50%;
+
+}
+
+.colorGreen {
+  height: 10px;
+  width: 10px;
+  background-color: #4caf50;
+  border: 1px solid rgb(117, 117, 117);
+  border-radius: 50%;
+}
+
+.colorGray {
+  height: 10px;
+  width: 10px;
+  background-color: #D3D3D3;
+  border: 1px solid rgb(117, 117, 117);
+  border-radius: 50%;
+}
+
+/*Div bottoni in result*/
+
+.buttonsResult {
+  width: 500px;
+  margin: 0 auto;
+  display: inline-block;
+}
+
+/*Tabella risultati*/
+
+.tableContainer table {
+  margin-top: 20px;
+  border: 2px solid #3B1455;
+  border-radius: 12px;
+  border-spacing: 0;
+  background-color: rgba(235, 209, 238, 0.3);
+}
+
+.tableContainer table th {
+  font-size: larger;
+  color: #3B1455;
+  padding: 10px;
+}
+
+.tableContainer table tbody td {
+  padding: 10px;
+  border-top: 2px solid #3B1455;
+}
+
+.tableContainer table.hide { /*nasconde la tabella e la mostra se si clicca il bottone*/
+  display: none;
+}
