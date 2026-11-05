@@ -1,0 +1,497 @@
+/* Portfolio Page — Settimana V, Giorno I
+   Layout basato su flexbox (mobile-first). */
+
+
+/* Reset minimale */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Body: tipografia di base + colonna flex (footer sempre in fondo) */
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #2b2b2b;
+  background-color: #fafafa;
+}
+
+
+/* Immagini fluide di default */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* Header — colonna flex centrata */
+#site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: hsl(220, 40%, 20%);
+  background-image: url("img/header-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  text-align: center;
+  line-height: 1.8;
+  padding: 30px 16px 20px;
+  border-bottom: 4px solid hsl(45, 90%, 60%);
+}
+
+#site-header h1 {
+  font-size: clamp(1.8rem, 6vw, 3rem);
+  font-weight: bold;
+  font-style: italic;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin: 8px 0;
+}
+
+.tagline {
+  color: rgb(220, 220, 220);
+  font-style: italic;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* Tablet+ */
+@media (min-width: 768px) {
+  #site-header {
+    padding: 60px 20px 40px;
+    line-height: 2.4;
+  }
+}
+
+
+/* Nav — riga flex che va a capo su mobile */
+#site-header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px;
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0;
+}
+
+#site-header nav a {
+  display: block;
+  color: hsl(45, 90%, 70%);
+  font-weight: bold;
+  padding: 8px 14px;
+  border-radius: 4px;
+  line-height: 1.6;
+  text-decoration: none;
+}
+
+#site-header nav a:hover {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+
+/* Main — colonna flex che occupa lo spazio rimasto; le card sono separate da gap */
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+@media (min-width: 768px) {
+  main {
+    gap: 24px;
+    padding: 40px 20px;
+  }
+}
+
+
+/* Sezioni come card */
+main section {
+  background-color: #ffffff;
+  padding: 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+@media (min-width: 768px) {
+  main section {
+    padding: 32px;
+  }
+}
+
+
+/* Titoli del main con marker */
+h2 {
+  font-size: clamp(1.3rem, 4vw, 1.8rem);
+  color: hsl(220, 60%, 30%);
+  text-align: left;
+  line-height: 1.4;
+  margin-top: 0;
+}
+
+main section h2::before {
+  content: "— ";
+  color: hsl(45, 90%, 50%);
+}
+
+h3 {
+  font-size: 1.15rem;
+  color: hsl(220, 30%, 25%);
+  text-align: left;
+  line-height: 1.6;
+}
+
+
+/* Chi sono — mobile: colonna con avatar centrato; desktop: riga avatar + testo */
+.bio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.avatar {
+  flex-shrink: 0;
+  width: 110px;
+  height: 110px;
+  border: 4px solid hsl(45, 90%, 60%);
+  border-radius: 50%;
+}
+
+.bio-text {
+  text-align: left;
+}
+
+#chi-sono p:first-of-type {
+  font-size: 1.05rem;
+  font-style: italic;
+  color: hsl(220, 30%, 25%);
+}
+
+@media (min-width: 768px) {
+  .bio {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 24px;
+  }
+  .bio-text {
+    flex: 1;
+    text-align: justify;
+  }
+  #chi-sono p:first-of-type {
+    font-size: 1.15rem;
+  }
+  #chi-sono p:first-of-type::first-letter {
+    font-size: 3rem;
+    font-weight: bold;
+    float: left; /* capolettera: qui il float è la tecnica giusta */
+    margin-right: 6px;
+    color: hsl(220, 60%, 30%);
+  }
+}
+
+#chi-sono .bio-text p:first-child {
+  margin-top: 0;
+}
+
+
+/* Lista competenze a righe alternate */
+.skill-list {
+  line-height: 2.2;
+  padding-left: 20px;
+}
+
+.skill-list li:nth-child(odd) {
+  background-color: #f5f7fb;
+}
+
+.skill-list li:nth-child(even) {
+  background-color: #ffffff;
+}
+
+.skill-list li:first-child {
+  font-weight: bold;
+}
+
+
+/* Tabella esperienze — wrapper con scroll orizzontale su mobile */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table-wrapper table {
+  width: 100%;
+  min-width: 480px;
+  border-collapse: collapse;
+}
+
+.table-wrapper th,
+.table-wrapper td {
+  padding: 8px 12px;
+  border-bottom: 1px solid #e0e0e0;
+  text-align: left;
+}
+
+.table-wrapper caption {
+  font-style: italic;
+  color: #666;
+  padding: 8px 0;
+}
+
+
+/* Progetti — colonna flex con gap + tag NEW sul primo */
+#progetti {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#progetti h2,
+#progetti > p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.project {
+  position: relative;
+  padding: 12px;
+  border-radius: 4px;
+}
+
+.project > :first-child {
+  margin-top: 0;
+}
+
+.project > :last-child {
+  margin-bottom: 0;
+}
+
+.project:nth-of-type(odd) {
+  background-color: hsl(45, 60%, 96%);
+}
+
+.project:nth-of-type(even) {
+  background-color: #ffffff;
+}
+
+.project:first-of-type::after {
+  content: "NEW";
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 2px 8px;
+  background-color: hsl(0, 70%, 50%);
+  color: #ffffff;
+  border-radius: 0 4px 0 4px;
+  font-size: 0.75rem;
+}
+
+
+/* Contatti — il bottone resta nella card, non a tutta larghezza su desktop */
+#contatti {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#contatti h2 {
+  margin-bottom: 12px;
+}
+
+
+/* Form contatti — colonna flex; ogni campo è a sua volta una colonna */
+label {
+  font-weight: bold;
+  color: hsl(220, 60%, 25%);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+form p {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 0;
+}
+
+form br {
+  display: none; /* il layout flex rende inutili i <br> tra label e campo */
+}
+
+/* Riga checkbox + etichetta */
+form p:has(#consenso) {
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+input,
+textarea,
+select {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px; /* evita zoom iOS al focus */
+  width: 100%;
+  background-color: #f5f7fb;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  background-color: #ffffff;
+  color: #000000;
+  outline: 2px solid hsl(220, 60%, 45%);
+}
+
+#consenso {
+  width: auto;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #999999;
+  font-style: italic;
+}
+
+button {
+  color: #ffffff;
+  background-color: hsl(220, 60%, 30%);
+  font-weight: bold;
+  width: 100%;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+button:hover {
+  color: hsl(45, 90%, 80%);
+  background-color: hsl(220, 60%, 45%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Torna in cima — centratura del simbolo con flex */
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: hsl(220, 60%, 30%);
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+
+/* Overlay — centratura del modal con flex (niente più top/left/transform) */
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+/* Necessario: display:flex sovrascriverebbe l'attributo hidden */
+.overlay[hidden] {
+  display: none;
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 560px;
+  max-height: 100%;
+  overflow-y: auto;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.modal > p {
+  margin: 0;
+}
+
+.modal .close {
+  align-self: flex-end;
+  width: auto;
+  padding: 6px 14px;
+}
+
+
+@media (min-width: 768px) {
+  input,
+  textarea,
+  select {
+    width: 60%;
+  }
+  button {
+    width: auto;
+    min-width: 30%;
+  }
+  form p:has(#consenso) input {
+    width: auto;
+  }
+  form button[type="submit"] {
+    align-self: flex-start;
+  }
+}
+
+
+/* Footer */
+#site-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(220, 40%, 15%);
+  color: #ffffff;
+  font-size: 0.9rem;
+  line-height: 2;
+  padding: 20px 16px;
+}
+
+#site-footer p {
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  #site-footer {
+    line-height: 2.4;
+    padding: 30px 20px;
+  }
+}
