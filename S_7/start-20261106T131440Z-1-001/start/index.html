@@ -21,7 +21,7 @@
     <main class="container">
       <section class="form-section">
         <!-- form per aggiungere un libro: titolo, autore, anno, formato (cartaceo/digitale) -->
-        <form action="#">
+        <form action="#" id="form">
           <div class="container">
               <div>
                 <label for="title" class="form-label">Titolo</label>
@@ -38,10 +38,13 @@
               <div >
                 <label for="format" class="form-label">Formato</label>
                 <select name="format" id="format" class="d-block" style="width: 100%;">
-                  <option value="*">Cartaceo</option>
-                  <option value="1">Digitale</option>
                   <option value="0">Cartaceo</option>
+                  <option value="1">Digitale</option>
                 </select>
+              </div>
+              <div id="sizeBox" class="d-none">
+                <label for="size" class="form-label">Dimensione (MB)</label>
+                <input type="number" id="size" min="0" step="0.1" class="form-control" />
               </div>
               <div>
                 <button class="btn btn-secondary mt-3" id="submitBtn">Submit</button>
@@ -54,7 +57,7 @@
       </section>
 
       <section class="lista-section">
-        <h2>I tuoi libri</h2>
+        <h2>I tuoi libri <span id="count">(0)</span></h2>
         <ul id="lista-libri">
           <!-- popolato da JavaScript -->
         </ul>

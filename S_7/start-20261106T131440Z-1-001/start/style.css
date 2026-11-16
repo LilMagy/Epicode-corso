@@ -31,8 +31,31 @@ body {
 
 
 /* Aggiungi qui le tue regole per form, lista libri, bottoni, ecc. */
+#lista-libri {
+  list-style: none;
+  padding: 0;
+}
+
 .tag {
   width: 100%;
   border-left: solid rgb(15, 15, 147);
-  border-radius: 2;
+  border-radius: 2px;
+  background: white;
+  padding: 12px 16px;
+  margin-bottom: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.tag.read {
+  border-left-color: #6dbb8a;
+  background: #fafafa;
+  opacity: 0.75;
+}
+
+.badge-format {
+  background: #ececec;
+  color: #555;
+  font-size: 0.75rem;
+  padding: 1px 10px;
+  border-radius: 999px;
 }
