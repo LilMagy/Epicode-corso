@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini-libreria — Settimana VII Giorno I</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <h1>La mia libreria</h1>
+      <p>Aggiungi i tuoi libri e segnali come letti.</p>
+    </header>
+
+    <main class="container">
+      <section class="form-section">
+        <!-- form per aggiungere un libro: titolo, autore, anno, formato (cartaceo/digitale) -->
+        <form action="#">
+          <div class="container">
+              <div>
+                <label for="title" class="form-label">Titolo</label>
+                <input type="text" id="title" class="form-control" />
+              </div>
+              <div>
+                <label for="author" class="form-label">Autore</label>
+                <input type="text" id="author" class="form-control" />
+              </div>
+              <div class="mb-2">
+                <label for="date" class="form-label">Anno</label>
+                <input type="date" id="date" class="form-control" />
+              </div>
+              <div >
+                <label for="format" class="form-label">Formato</label>
+                <select name="format" id="format" class="d-block" style="width: 100%;">
+                  <option value="*">Cartaceo</option>
+                  <option value="1">Digitale</option>
+                  <option value="0">Cartaceo</option>
+                </select>
+              </div>
+              <div>
+                <button class="btn btn-secondary mt-3" id="submitBtn">Submit</button>
+                <button class="btn btn-secondary mt-3" id="resetBtn">debug_RESET</button>
+                <button class="btn btn-secondary mt-3" id="logBtn">debug_LOG</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </section>
+
+      <section class="lista-section">
+        <h2>I tuoi libri</h2>
+        <ul id="lista-libri">
+          <!-- popolato da JavaScript -->
+        </ul>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
